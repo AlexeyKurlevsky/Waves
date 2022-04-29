@@ -24,8 +24,10 @@ sigma_0 = 1
 C_0 = np.sqrt(E / rho)
 alpha = rho * C_0 / M
 
+print(C_0)
+
 x = np.arange(0, l, 0.01)
-t = np.arange(0, 2, 10 ** (-3))
+t = np.arange(0, 3, 10 ** (-3))
 
 xv, tv = np.meshgrid(x, t)
 sigma = np.exp(-alpha * (tv - xv / C_0)) * H(tv - xv / C_0) - np.exp(-alpha * (tv - (2 * l - x) / C_0)) * H(
